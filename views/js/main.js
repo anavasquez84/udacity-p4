@@ -497,13 +497,69 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
 // Moves the sliding background pizzas based on scroll position
+//function updatePositions() {
+  //frame++;
+  //window.performance.mark("mark_start_frame");
+
+//CHANGED querySelectorAll TO getElementsbyClassName
+  //var items = document.getElementsbyClassName('.mover');
+   
+
+   //for (var i = 0; i < items.length; i++) {
+    //var phase =  Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    //items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+  //}
+
+var frame = 0;
+
+// Logs the average amount of time per 10 frames needed to move the sliding background pizzas on scroll.
+function logAverageFrame(times) {   // times is the array of User Timing measurements from updatePositions()
+  "use strict";
+  var numberOfEntries = times.length;
+  var sum = 0;
+  for (var i = numberOfEntries - 1; i > numberOfEntries - 11; i--) {
+    sum = sum + times[i].duration;
+  }
+  console.log("Average time to generate last 10 frames: " + sum / 10 + "ms");
+}
+
+//SCROLL FUNCTION WAS OPTIMIZED USING PAUL LEWIS' TUTORIAL
+//REFERENCE: http://www.html5rocks.com/en/tutorials/speed/animations/
+
+var latestKnownScrollY = 0,
+    ticking = false;
+
+function onScroll() {
+  "use strict";
+  latestKnownScrollY = window.scrollY;
+  requestTick();
+}
+
+function requestTick() {
+  "use strict";
+  if (!ticking) {
+    requestAnimationFrame(updatePositions);
+  }
+  ticking = true;
+}
+
+// updatePositions WAS UPDATED TO INCLUDE "user strict" and ticking = false
 function updatePositions() {
+  "use strict";
+  ticking = false;
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover');
-  for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+//MOVED items.length AND scrollTop OUT OF LOOP.
+//REFERENCE: http://stackoverflow.com/questions/29979787/javascript-how-can-i-optimize-this-line-for-performance
+//CHANGED querySelectorAll TO getElementsByClassName
+  var items = document.getElementsByClassName('mover'),
+      scrollX = document.body.scrollTop / 1250,
+      itemsLength = items.length,
+      phase;
+
+  for (var i = 0; i < itemsLength; i++) {
+    phase = Math.sin(scrollX + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -518,13 +574,17 @@ function updatePositions() {
 }
 
 // runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
+//OPTIMIZED RENDERING USING requestAnimationFrame
+window.addEventListener('scroll', function(){
+  window.requestAnimationFrame(updatePositions);
+});
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+//CHANGED PIZZA QUANTITY FROM 200 TO 100
+  for (var i = 0; i < 100; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
