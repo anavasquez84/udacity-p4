@@ -396,7 +396,7 @@ var pizzaElementGenerator = function(i) {
   pizzaContainer.appendChild(pizzaDescriptionContainer);
 
   return pizzaContainer;
-}
+};
 
 // resizePizzas(size) is called when the slider in the "Our Pizzas" section of the website moves.
 var resizePizzas = function(size) { 
@@ -446,13 +446,16 @@ var resizePizzas = function(size) {
 
     return dx;
   }
-
+  //UPDATED FUNCTION PER REVIEW SUGGESTIONS
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+      var thePizzaContainer = document.getElementsByClassName("randomPizzaContainer");
+      var containerLength = thePizzaContainer.length
+      var dx = determineDx(thePizzaContainer[0], size);
+      var newwidth = (thePizzaContainer[0].offsetWidth + dx) + 'px';
+
+    for (var i = 0; i < containerLength; i++) {
+      thePizzaContainer[i].style.width = newwidth;
     }
   }
 
@@ -583,8 +586,8 @@ window.addEventListener('scroll', function(){
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-//CHANGED PIZZA QUANTITY FROM 200 TO 100
-  for (var i = 0; i < 100; i++) {
+//CHANGED PIZZA QUANTITY FROM 200 TO 40
+  for (var i = 0; i < 40; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
