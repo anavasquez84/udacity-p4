@@ -24,8 +24,9 @@ Changes on this file were done to improve the critical rendering path. Performan
 Changes in this file were done to improve the FPS (frame-per-second) rate to 60FPS while scrolling. Changes were made to the file <b>views/js/main.js</b>
 
 <b>Optimizations</b><br>
-1. Starting on <b>line 526</b> the <b>updatePositions</b> function was refactored by debouncing scroll events<br>
-2. On <b>line 556</b>, <b>var items</b> was refactored to separate the loop from <b>items.length</b> and <b>scrollTop</b></br> 3. On <b>line 556</b>, <b>querySelectorAll</b> was changed to <b>getElementsByClassName</b> <br> 4. On <b>line 579</b>, <b>requestAnimationFrame</b> was added to optimize rendering <br> 5. On <b>line 587</b>, pizza quantity was reduced to 100.  
+1. On <b>line 451</b> the <b>changePizzaSizes<b> function was refactored and updated 
+2. On <b>line 526</b> the <b>updatePositions</b> function was refactored by debouncing scroll events<br>
+3. On <b>line 556</b> <b>var items</b> was refactored to separate the loop from <b>items.length</b> and <b>scrollTop</b></br> 4. On <b>line 556</b>, <b>querySelectorAll</b> was changed to <b>getElementsByClassName</b> <br> 5. On <b>line 579</b>, <b>requestAnimationFrame</b> was added to optimize rendering <br> 6. On <b>line 587</b>, pizza quantity was reduced to 40.  
 
 #Resources
 The following pages were used as resources
