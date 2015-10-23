@@ -6,15 +6,15 @@ The goal of this project was to optimize the performance of two files in [this r
 
 To view the difference between the original and optimized files, check the links below:
 
-[original index.html file](https://cdn.rawgit.com/cameronwp/udportfolio/master/index.html)| [optimized index.html file](https://cdn.rawgit.com/anavasquez84/udacity-web-opt/master/index.html)
+[original index.html file](https://cdn.rawgit.com/cameronwp/udportfolio/master/index.html) | [optimized index.html file](https://cdn.rawgit.com/anavasquez84/udacity-web-opt/master/index.html)
 
-[original pizza.html](https://cdn.rawgit.com/cameronwp/udportfolio/master/views/pizza.html)| [optimized pizza.html file](https://cdn.rawgit.com/anavasquez84/udacity-web-opt/master/views/pizza.html)
+[original pizza.html](https://cdn.rawgit.com/cameronwp/udportfolio/master/views/pizza.html) | [optimized pizza.html file](https://cdn.rawgit.com/anavasquez84/udacity-web-opt/master/views/pizza.html)
 
 #####Index.html
 Changes on this file were done to improve the critical rendering path. Performance optimizations take this file's PageSpeed score from 30 to 93.  
 
-*Optmizations*
-1. Added media attribute to link *css/print.css*
+**Optmizations**
+-1. Added media attribute to link *css/print.css*
 2. Google Fonts were moved to *style.css* and are accessed using @font-face
 3.*Style.css* content was inlined and minified into *index.html*
 4. Images from *line 16* and *line 46* were compressed and resized using ImageMagik
