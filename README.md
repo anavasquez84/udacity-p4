@@ -36,8 +36,12 @@ Changes in this file were done to improve the FPS (frame-per-second) rate to 60F
 #####Resources
 The following pages were used as resources:
 
-[https://css-tricks.com/snippets/css/using-font-face/](https://css-tricks.com/snippets/css/using-font-face/)
-[http://www.jsmini.com/?_ga=1.63345127.99162416.1424805980](http://www.jsmini.com/?_ga=1.63345127.99162416.1424805980)
-[http://www.cleancss.com/css-minify/?_ga=1.132248461.2019049402.1435843830](http://www.cleancss.com/css-minify/?_ga=1.132248461.2019049402.1435843830)
-[http://www.html5rocks.com/en/tutorials/speed/animations/](http://www.html5rocks.com/en/tutorials/speed/animations/)
-[http://stackoverflow.com/questions/29979787/javascript-how-can-i-optimize-this-line-for](http://stackoverflow.com/questions/29979787/javascript-how-can-i-optimize-this-line-for)
+-[https://css-tricks.com/snippets/css/using-font-face/](https://css-tricks.com/snippets/css/using-font-face/)
+
+-[http://www.jsmini.com/?_ga=1.63345127.99162416.1424805980](http://www.jsmini.com/?_ga=1.63345127.99162416.1424805980)
+
+-[http://www.cleancss.com/css-minify/?_ga=1.132248461.2019049402.1435843830](http://www.cleancss.com/css-minify/?_ga=1.132248461.2019049402.1435843830)
+
+-[http://www.html5rocks.com/en/tutorials/speed/animations/](http://www.html5rocks.com/en/tutorials/speed/animations/)
+
+-[http://stackoverflow.com/questions/29979787/javascript-how-can-i-optimize-this-line-for](http://stackoverflow.com/questions/29979787/javascript-how-can-i-optimize-this-line-for)
