@@ -14,6 +14,7 @@ To view the difference between the original and optimized files, check the links
 Changes on this file were done to improve the critical rendering path. Performance optimizations take this file's PageSpeed score from 30 to 93.  
 
 **Optmizations**
+
 1. Added media attribute to link **css/print.css**
 2. Google Fonts were moved to **style.css** and are accessed using @font-face
 3. **Style.css** content was inlined and minified into **index.html**
@@ -24,6 +25,7 @@ Changes on this file were done to improve the critical rendering path. Performan
 Changes in this file were done to improve the FPS (frame-per-second) rate to 60FPS while scrolling. Changes were made to the file **views/js/main.js**
 
 **Optimizations**
+
 1. On **line 451** the **changePizzaSizes** function was refactored and updated 
 2. On **line 526** the *updatePositions* function was refactored by debouncing scroll events
 3. On **line 556** **var items** was refactored to separate the loop from **items.length** and **scrollTop**
@@ -32,7 +34,7 @@ Changes in this file were done to improve the FPS (frame-per-second) rate to 60F
 6. On **line 587**, pizza quantity was reduced to 40.  
 
 #####Resources
-The following pages were used as resources
+The following pages were used as resources:
 
 [https://css-tricks.com/snippets/css/using-font-face/](https://css-tricks.com/snippets/css/using-font-face/)
 [http://www.jsmini.com/?_ga=1.63345127.99162416.1424805980](http://www.jsmini.com/?_ga=1.63345127.99162416.1424805980)
